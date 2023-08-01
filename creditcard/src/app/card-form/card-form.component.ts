@@ -16,4 +16,9 @@ export class CardFormComponent {
     
   }
 
+  get cardFormGroup(): FormGroup {
+    // return this.cardForm?.get('name') as unknown as FormGroup;
+    return this.cardForm?.controls?.name as unknown as FormGroup;
+  }
+
 }
