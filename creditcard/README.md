@@ -1,5 +1,15 @@
 # Creditcard
 
+## Form Control States
+valid -> Angular has validated whatever the user entered successfully
+invalid -> The value in the input is invalid
+pending -> Validation is currently running on this field
+disabled -> Idnore user input on this field and don't validate it
+touched -> User clicked into then out of a field
+untouched -> User hasn't clicked into then out of this field
+pristine -> User hasn't clicked on this field at all
+dirty -> User has changed the value in this field
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.6.
 
 ## Development server
