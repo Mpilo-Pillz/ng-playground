@@ -1,10 +1,23 @@
-<form [formGroup]="cardForm">
-  <!-- <app-input [control]="cardForm?.controls?.name"></app-input> -->
-  <app-input [control]="$any(cardForm.get('name'))"></app-input>
-  <!-- <app-input [control]="cardFormGroup"></app-input> -->
+<form [formGroup]="cardForm" (ngSubmit)="onSubmit()">
+  <app-input label="Name" [control]="$any(cardForm.get('name'))"></app-input>
+  <app-input label="Card Number" [control]="$any(cardForm.get('cardNumber'))"></app-input>
+  <app-input label="Expiration" [control]="$any(cardForm.get('expiration'))"></app-input>
+  <app-input label="Security Code" [control]="$any(cardForm.get('securityCode'))"></app-input>
+  <button class="button is-primary" [disabled]="cardForm.invalid" type="submit">Submit</button>
 </form>
 <hr />
 <div>Form Contents: {{ cardForm.value | json }}</div>
 <div>Form is valid: {{ cardForm.valid }}</div>
 <div>Errors around name: {{ cardForm.controls.name.errors | json }}</div>
-<!-- <div>Errors around name: {{ cardForm.get('name').errors | json }}</div> alternative syntax -->
+
+<!-- 
+<form [formGroup]="cardForm">
+  <app-input [control]="cardForm?.controls?.name"></app-input>
+  <app-input label="Name" [control]="$any(cardForm.get('name'))"></app-input>
+  <app-input [control]="cardFormGroup"></app-input>
+</form>
+<hr />
+<div>Form Contents: {{ cardForm.value | json }}</div>
+<div>Form is valid: {{ cardForm.valid }}</div>
+<div>Errors around name: {{ cardForm.controls.name.errors | json }}</div>
+<div>Errors around name: {{ cardForm.get('name').errors | json }}</div> alternative syntax -->

@@ -8,7 +8,10 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 })
 export class CardFormComponent {
   cardForm = new FormGroup({
-    name: new FormControl('', [Validators.required, Validators.minLength(3), Validators.maxLength(5)])
+    name: new FormControl('', [Validators.required, Validators.minLength(3), Validators.maxLength(5)]),
+    cardNumber: new FormControl('', [Validators.required, Validators.minLength(16), Validators.maxLength(16)]),
+    expiration: new FormControl('', [Validators.required, Validators.pattern(/^(0[1-9]|1[0-2])\/\d{2}$/)]),
+    securityCode: new FormControl('', [Validators.required,Validators.min(100), Validators.max(999)] )
   })
 
   constructor() {
@@ -19,6 +22,11 @@ export class CardFormComponent {
   get cardFormGroup(): FormGroup {
     // return this.cardForm?.get('name') as unknown as FormGroup;
     return this.cardForm?.controls?.name as unknown as FormGroup;
+  }
+
+  onSubmit() {
+    console.log("Form Submitted");
+    
   }
 
 }

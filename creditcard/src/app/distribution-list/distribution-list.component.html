@@ -1,0 +1,8 @@
+<form [formGroup]="emailForm">
+    <label for="emailList">Enter Email Addresses (separated by semicolons)</label>
+    <textarea id="emailList" formControlName="emailList"></textarea>
+    <div *ngIf="emailForm.get('emailList')?.invalid && (emailForm.get('emailList')?.dirty || emailForm.get('emailList')?.touched)">
+      <div *ngIf="emailForm.get('emailList')?.errors?.['required']">Email list is required.</div>
+      <div *ngIf="emailForm.get('emailList')?.errors?.['pattern']">Invalid email format or separator.</div>
+    </div>
+  </form>
