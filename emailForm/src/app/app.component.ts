@@ -7,4 +7,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   email: String | undefined;
+  // model = {
+  //   emailControl: ''
+  // }
+
+  onSubmit() {
+    console.log(this.email);
+    
+  }
 }
