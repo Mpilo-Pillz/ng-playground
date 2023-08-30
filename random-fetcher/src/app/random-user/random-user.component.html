@@ -1,0 +1,51 @@
+<div class="container">
+    <app-custom-card class="u-text--centered">
+        <div class="head">
+            <img 
+            [src]="user?.picture" 
+            [alt]="user?.picture"
+            class=""u-image--rounded
+            >
+        </div>
+        <div class="detail">
+            <app-custom-tabs>
+                <app-custom-tab
+                [src]="user?.picture"
+                [description]="'Hi, My name is'"
+                [value]="user?.name">
+            </app-custom-tab>
+            <app-custom-tab
+            [src]="'./assets/icons/svg/misc/email.svg'"
+            [description]="'My email address is'"
+            [value]="user?.email"
+          >
+          </app-custom-tab>
+          <app-custom-tab
+            [src]="'./assets/icons/svg/misc/calendar.svg'"
+            [description]="'My birthday is'"
+            [value]="user?.dob"
+          >
+          </app-custom-tab>
+          <app-custom-tab
+            [src]="'./assets/icons/svg/misc/map-location.svg'"
+            [description]="'My address is'"
+            [value]="user?.address"
+          >
+          </app-custom-tab>
+          <app-custom-tab
+            [src]="'./assets/icons/svg/misc/call.svg'"
+            [description]="'My phone number is'"
+            [value]="user?.cell"
+          >
+          </app-custom-tab>
+          <app-custom-tab
+            [src]="'./assets/icons/svg/misc/locked.svg'"
+            [description]="'My password is'"
+            [value]="user?.password"
+          >
+          </app-custom-tab>
+             
+            </app-custom-tabs>
+        </div>
+    </app-custom-card>
+</div>

@@ -1,0 +1,6 @@
+<ng-content></ng-content>
+<ul>
+    <li *ngFor="let tab of tabs" (mouseenter)="selectTab(tab)"> 
+        <img [src]="tab.src" alt="" class="u-image--24">
+    </li>
+</ul>
