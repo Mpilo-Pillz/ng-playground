@@ -8,6 +8,9 @@ import { CustomCardComponent } from './components/custom-card/custom-card.compon
 import { CustomTabsComponent } from './components/custom-tabs/custom-tabs.component';
 import { CustomTabComponent } from './components/custom-tab/custom-tab.component';
 import { HttpClientModule } from '@angular/common/http';
+import { AgGridDojoModule } from './ag-grid-dojo/ag-grid-dojo.module';
+
+
 
 @NgModule({
   declarations: [
@@ -15,11 +18,12 @@ import { HttpClientModule } from '@angular/common/http';
     RandomUserComponent,
     CustomCardComponent,
     CustomTabsComponent,
-    CustomTabComponent
+    CustomTabComponent,
+    
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule, HttpClientModule
+    AppRoutingModule, HttpClientModule, AgGridDojoModule
   ],
   providers: [],
   bootstrap: [AppComponent]
