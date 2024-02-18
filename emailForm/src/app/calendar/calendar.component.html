@@ -1,0 +1,28 @@
+<table>
+  <thead>
+    <tr>
+      <th>Sun</th>
+      <th>Mon</th>
+      <th>Tue</th>
+      <th>Wed</th>
+      <th>Thu</th>
+      <th>Fri</th>
+      <th>Sat</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr
+      *ngFor="let week of weeks; even as isEven"
+      [ngClass]="{ 'even-row': isEven }"
+    >
+      <td *ngFor="let day of getDaysInWeek(week)">
+        <ng-container *ngIf="day.dayNumber as dayNumber">
+          <ng-container *ngIf="day.isBookable; else notBookable">
+            <button (click)="bookDay(dayNumber)">Book</button>
+          </ng-container>
+          <ng-template #notBookable>{{ dayNumber }}</ng-template>
+        </ng-container>
+      </td>
+    </tr>
+  </tbody>
+</table>
