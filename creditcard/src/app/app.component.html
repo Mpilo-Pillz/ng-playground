@@ -1,6 +1,10 @@
-
 <div class="container">
-    <app-card-form></app-card-form>
-    <hr>
-    <app-distribution-list></app-distribution-list>
+  <app-card-form></app-card-form>
+  <hr />
+  <app-distribution-list></app-distribution-list>
+</div>
+
+<div *ngIf="let qualification of courses; index as i">
+  <span>{{ qualification.nqfLevel }}</span>
+  <span>{{ qualification.qualification }}</span>
 </div>
