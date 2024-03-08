@@ -5,9 +5,15 @@ import { Component } from '@angular/core';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
 })
+
+interface Qualification {
+  nqfLevel: number;
+  qualification: string;
+
+}
 export class AppComponent {
   title = 'creditcard';
-  tableData = [
+  courses: Qualification[] = [ // Updated the type to Qualification[]
     { nqfLevel: 5, qualification: 'Higher Certificate in Mathematics' },
     { nqfLevel: 6, qualification: 'Diploma in Information Technology' },
     {
