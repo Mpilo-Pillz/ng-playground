@@ -1,0 +1,35 @@
+<!-- Template Driven Form -->
+<h1>Mpilo</h1>
+<form #customerForm="ngForm">
+  <!-- Text field for customer name -->
+  <input type="text" name="customerName" [(ngModel)]="selectedCustomer.name!" />
+
+  <!-- Dropdown for selecting a customer -->
+  <select
+    name="customerSelector"
+    [(ngModel)]="selectedCustomer"
+    (ngModelChange)="selectCustomer($event)"
+  >
+    <option *ngFor="let customer of customers" [value]="customer.id!">
+      {{ customer?.name }}
+    </option>
+  </select>
+
+  <!-- Dropdown for gender based on selected customer -->
+  <select name="gender" [(ngModel)]="selectedGender">
+    <option *ngFor="let gender of selectedCustomer.genders!" [value]="gender">
+      {{ gender }}
+    </option>
+  </select>
+
+  <!-- Dropdown for shoe size based on selected customer -->
+  <select name="shoeSize" [(ngModel)]="selectedShoeSize">
+    <option *ngFor="let size of selectedCustomer.shoeSizes!" [value]="size">
+      {{ size }}
+    </option>
+  </select>
+
+  <!-- Buttons -->
+  <button type="button">Button 1</button>
+  <button type="button">Button 2</button>
+</form>
