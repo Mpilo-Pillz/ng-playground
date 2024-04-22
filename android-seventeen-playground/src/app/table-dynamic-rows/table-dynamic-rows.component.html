@@ -1,0 +1,43 @@
+<!-- app.component.html
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Surname</th>
+    <th>Operating Systems</th>
+  </tr>
+  <tr *ngFor="let tech of technicians">
+    <td>{{ tech.name }}</td>
+    <td>{{ tech.surname }}</td>
+    <td>
+      <label *ngFor="let os of tech.os">
+        <input
+          type="checkbox"
+          [(ngModel)]="os.selected"
+          (change)="updateTable()"
+        />{{ os.operatingSystem }}
+      </label>
+    </td>
+  </tr>
+</table> -->
+
+<!-- app.component.html -->
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Surname</th>
+    <th>Operating Systems</th>
+  </tr>
+  <tr *ngFor="let tech of technicians">
+    <td>{{ tech.name }}</td>
+    <td>{{ tech.surname }}</td>
+    <td>
+      <label *ngFor="let os of tech.os">
+        <input
+          type="checkbox"
+          [(ngModel)]="os.selected"
+          (change)="updateTable()"
+        />{{ os.operatingSystem }}
+      </label>
+    </td>
+  </tr>
+</table>
