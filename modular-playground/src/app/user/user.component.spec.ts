@@ -2,12 +2,14 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { UserComponent } from './user.component';
 import { UserService } from './user.service';
+import { DataService } from '../shared/data.service';
 
 describe('UserComponent', () => {
   let component: UserComponent;
   let fixture: ComponentFixture<UserComponent>;
   let app: any;
   let userService: UserService;
+  let dataService: DataService;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
@@ -18,6 +20,7 @@ describe('UserComponent', () => {
     component = fixture.componentInstance;
     app = fixture.debugElement.componentInstance;
     userService = fixture.debugElement.injector.get(UserService);
+    dataService = fixture.debugElement.injector.get(DataService);
     fixture.detectChanges();
   });
 
@@ -47,5 +50,13 @@ describe('UserComponent', () => {
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement as HTMLElement;
     expect(compiled.querySelector('p')).not.toContain(app.user.name);
+  });
+
+  it('should not fetch data successfully if not called asynchronously', () => {
+    let spy = spyOn(dataService, 'getDetails').and.returnValue(
+      Promise.resolve('Data')
+    );
+    fixture.detectChanges();
+    expect(app.data).toBeUndefined();
   });
 });
